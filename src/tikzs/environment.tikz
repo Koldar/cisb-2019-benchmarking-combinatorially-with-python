@@ -1,0 +1,21 @@
+\tikzstyle{vertex} = [shape=rectangle, rounded corners=1mm, draw=blue!50, fill=blue!20, thick, minimum size=3mm, inner sep=3pt, node distance=1.0cm and 0.1cm];
+\tikzstyle{vertex2} = [shape=rectangle, rounded corners=1mm, draw=red!50, fill=red!20, thick, minimum size=3mm, inner sep=3pt, node distance=1cm and 0.1cm];
+\tikzstyle{vertex3} = [shape=rectangle, rounded corners=1mm, draw=green!50, fill=green!20, thick, minimum size=3mm, inner sep=3pt, node distance=1cm and 0.1cm];
+\tikzstyle{vertex4} = [shape=rectangle, rounded corners=1mm, draw=yellow!50, fill=yellow!20, thick, minimum size=3mm, inner sep=3pt, node distance=1cm and 0.1cm];
+\tikzstyle{vertex5} = [shape=rectangle, rounded corners=1mm, draw=cyan!50, fill=cyan!20, thick, minimum size=3mm, inner sep=3pt, node distance=1cm and 0.1cm];
+
+\node[vertex3](Maps) at (0,0) {Maps};
+\node[vertex, right=of Maps](Perturbations) {Perturbations};
+\node[vertex, below =of Perturbations](Random) {Random};
+\node[vertex, left =of Random](Area) {Area};
+\node[vertex2, below right =of Random](Edges) {\# Edges};
+\node[vertex4, below left =of Area](Radius) {Radius};
+\node[vertex5, below right=of Area](Location) {Location};
+
+\draw[-{Latex[length=2mm,width=3mm]}, line width=1mm]
+    (Perturbations) edge node[]{} (Random) 
+    (Perturbations) edge node[]{} (Area) 
+    (Random) edge node[]{} (Edges) 
+    (Area) edge node[]{} (Radius)
+    (Area) edge node[]{} (Location)  
+;
